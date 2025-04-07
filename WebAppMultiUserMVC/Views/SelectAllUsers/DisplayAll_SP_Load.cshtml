@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebAppMultiUserMVC.Models.SelectAllCls>
+@{
+    ViewBag.Title = "DisplayAll_SP_Load";
+}
+
+<h2>Display</h2>
+
+<div>
+    @using (Html.BeginForm("DisplayAll_SP_Load","SelectAllUsers",FormMethod.Get))
+            {
+                <table id="t01" class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                    @foreach(var item in ViewBag.userdetails)
+                {
+                    <tr>
+                        <td>@item.AdName</td>
+                        <td>@item.AdAddress</td>
+                        <td>@item.AdPhone</td>
+                        <td>@item.AdEmail</td>
+                    </tr>
+                }
+                </table>
+            }
+</div>
+<style>
+    #t01{
+        background-color:lightcoral;
+    }
+    #t01 h1{
+        color:black;
+    }
+    #t01 th{
+        color:aliceblue;
+        background-color:coral;
+    }
+    
+</style>
